@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.2.0/jquery.mobile-1.2.0.css" />
+        <title>Writers</title>
+    </head>
+<body id="mobile">
+        <script type="text/javascript" src="cordova-2.2.0.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+	<script src="jquery.mobile-1.2.0/jquery.mobile-1.2.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+<style>
+.lf a:link {color:#000000;text-decoration:none }      /* unvisited link */
+.lf a:visited {color:#000000;text-decoration:none}  /* visited link */
+.lf a:hover {color:#000000;text-decoration:none}  /* mouse over link */
+.lf a:active {color:#000000;text-decoration:none}  /* selected link */ 
+.lista {
+	border-bottom: 1px solid gray ;
+	height:80px;
+	background-color: #000000;
+	padding:3px;
+	text-weight:none;
+
+}
+.lf {
+	float:left;
+	width:200px;
+	height: 80px;
+	overflow:hidden;
+	color:white;
+}
+.rt {
+	float:right;
+	width:100px;
+	height: 75px;
+	overflow:hidden;
+}
+.source {
+	background-color:red
+
+}
+.news {
+}
+</style>
+<div id="maintela" data-role="page" data-dom-cache="true">
+	<div data-role="header" data-position="fixed">
+		<a href="#" id="home" onclick="read_home()" data-icon="home">Home</a>
+		<h1>Top News</h1>
+		<a id="writers" href="#" data-icon="gear">Writers</a>
+
+<div data-role="navbar">
+	<ul>
+		<li><a href="#" onclick="read_all();" class="ui-btn-active ui-state-persist">All</a></li>
+		<li><a href="#" onclick="read_portugues();">Portugues</a></li>
+		<li><a href="#" onclick="read_english();" >English</a></li>
+	</ul>
+</div><!-- /navbar -->
+
+
+	</div>
+	<div id="result">
+	</div>
+</div>
+    </body>
+</html>

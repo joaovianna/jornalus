@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="jquery.mobile-1.2.0/jquery.mobile-1.2.0.css" />
+        <title>Writers</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="cordova-2.2.0.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+<style>
+.lista {
+	border: 1px solid gray ;
+	height:100px;
+	background-color: white;
+
+}
+.lf {
+	float:left;
+	width:200px;
+	background-color: white;
+	height: 100px;
+	overflow:hidden;
+}
+.rt {
+	float:right;
+	width:100px;
+	background-color: red;
+	height: 100px;
+	overflow:hidden;
+}
+</style>
+<script>
+var pagina=1;
+        $("#maintela").ready(function () {
+$.get("http://www.jornal.us/cordova/colunistas.php", function(data){ 
+		$("#result").html(data);
+		alert(data);
+});
+        $(window).scroll(function(){
+                if  ($(window).scrollTop() >= $(document).height() - $(window).height()){
+                        var content;
+                        $.get('http://www.jornal.us/cordova/colunistas.php?pagina='+pagina++, function(data) { content= data; if(content=="\n") {messagebox();return false;} $("#result").append(content); });
+               }
+        });
+})
+</script>
+<div id="maintela">
+	<div data-role="header" data-position="fixed">
+		<a href="index.html" rel="external" data-icon="back">Back</a>
+		<h1>Writers</h1>
+		<a href="writers.html" rel="external" data-icon="gear">Writers</a>
+	</div>
+	<div id="tela" style="display:none">
+		<img src='logotransp.png'>	
+	</div>
+	<div id="result">
+	</div>
+</div>
+    </body>
+</html>
